@@ -1,0 +1,6 @@
+[submodule "skynet-keys"]
+	path = skynet-keys
+	url = git@github.com:codius/skynet-keys
+[submodule "validation-keys"]
+	path = validation-keys
+	url = git@github.com:codius/validator-keys

@@ -1,0 +1,12 @@
+54.172.212.33 validator_uuid=33505bcc-9729-44d4-ba2b-4ce2cb039241 ansible_ssh_key=skynet-keys/us-east-1.pem
+52.1.205.132 validator_uuid=abd6a5ff-6654-4c94-8fb0-29237fda16ba ansible_ssh_key=skynet-keys/us-east-1.pem
+54.67.72.173 validator_uuid=360ee3cf-b9f6-425a-b8c1-de8630249fae ansible_ssh_key=skynet-keys/us-west-1.pem
+52.16.66.76 validator_uuid=0509e031-1e36-49f8-a0ad-72ec08fed69a ansible_ssh_key=skynet-keys/eu-west-1.pem
+54.93.66.235 validator_uuid=c627464b-e286-4f01-bb06-0a7278e8512a ansible_ssh_key=skynet-keys/eu-central-1.pem
+52.74.67.18 validator_uuid=6e9e5eef-2734-4f95-ac4b-cf62fe66f405 ansible_ssh_key=skynet-keys/ap-southeast-1.pem
+54.65.200.22 validator_uuid=ce750c64-3680-4847-a71c-7badf745fb5a ansible_ssh_key=skynet-keys/ap-northeast-1.pem
+54.92.66.122 validator_uuid=f1802428-476d-44e8-ad24-92d715c66b08 ansible_ssh_key=skynet-keys/ap-northeast-1.pem
+52.64.9.71 validator_uuid=82dbcc80-33bc-4967-81ee-6068fcb361c1 ansible_ssh_key=skynet-keys/ap-southeast-2.pem
+54.94.245.104 validator_uuid=3f94c917-c5a8-410b-93a8-9636b75a1fc8 ansible_ssh_key=skynet-keys/sa-east-1.pem
+54.207.20.165 validator_uuid=6f1500b9-f138-4985-be13-a875ff597db6 ansible_ssh_key=skynet-keys/sa-east-1.pem
+52.11.28.194 validator_uuid=de0659dc-36d3-4c5b-a5ee-404186d42370 ansible_ssh_key=skynet-keys/us-east-2.pem

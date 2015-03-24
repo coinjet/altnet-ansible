@@ -1,0 +1,101 @@
+---
+- name: Install and configure a rippled validator
+  hosts: all
+  user: ubuntu
+  sudo: true
+  vars:
+    validation_seed: false
+    validation_public_key: false
+    validators:
+      - uuid: ce750c64-3680-4847-a71c-7badf745fb5a
+        key: n9LnZ1AiyHmytkhLUr89dmL76uxZLzzyregvQVZFkVfqEQTCpg7B
+        ip: 54.65.200.22
+        port: 51235
+      - uuid: 360ee3cf-b9f6-425a-b8c1-de8630249fae
+        key: n9LJWexXc9wxzUKWZe4faTS4N9DUba3jNsByERZSa8MJc2bhCF7c
+        ip: 54.67.72.173
+        port: 51235
+      - uuid: 0509e031-1e36-49f8-a0ad-72ec08fed69a
+        key: n9MnXUt5Qcx3BuBYKJfS4fqSohgkT79NGjXnZeD9joKvP3A5RNGm
+        ip: 52.16.66.76
+        port: 51235
+      - uuid: c627464b-e286-4f01-bb06-0a7278e8512a
+        key: n9LxyXSSrTZ482ceep9WGQnT2nknfzFMFgNL4wMjTUn3SfF3rhtS
+        ip: 54.93.66.235
+        port: 51235
+      - uuid: 6e9e5eef-2734-4f95-ac4b-cf62fe66f405
+        key: n9MTPLhEEjxcWHfqsXQhFoSUKaqYvU4E7B4yke39EMFm2DhFr43F
+        ip: 52.74.67.18
+        port: 51235
+      - uuid: 82dbcc80-33bc-4967-81ee-6068fcb361c1
+        key: n9Lw3j7THPhKLz2uDqBBWwyxHQC1Foyr3M6JeWCVyu7uhnhL6HA5
+        ip: 52.64.9.71
+        port: 51235
+      - uuid: 6f1500b9-f138-4985-be13-a875ff597db6
+        key: n9L2XLFvcdriK34bCNXexzKMVcsZ9i4UG9J4pykR5c3J8gvBB6fw
+        ip: 54.207.20.165
+        port: 51235
+      - uuid: 33505bcc-9729-44d4-ba2b-4ce2cb039241
+        key: n9JCK3M4ci7b1XRq2wr1Ckd1HNq3Cg7NWrWiKyzJa4R5J489QGer
+        ip: 54.172.212.33
+        port: 51235
+      - uuid: de0659dc-36d3-4c5b-a5ee-404186d42370
+        key: n9LXZBs2aBiNsgBkhVJJjDX4xA4DoEBLycF6q8zRhXD1Zu3Kwbe4
+        ip: 52.11.28.194
+        port: 51235
+      - uuid: f1802428-476d-44e8-ad24-92d715c66b08
+        key: n9J1voqeu6iZQiLXaMofLeMbv8mbPskJWGYRtjdo8rmpvNdQRyEn
+        ip: 54.92.66.122
+        port: 51235
+      - uuid: abd6a5ff-6654-4c94-8fb0-29237fda16ba
+        key: n9KuCFBLq2GD4vJtoL3tebQJbhcHSd7tMqFM1x9bPK9wSagPJdd1
+        ip: 52.1.205.132
+        port: 51235
+  vars_files:
+    - "validation-keys/{{validator_uuid}}"
+  tasks:
+    - name: Install apt repo
+      apt_repository: repo='deb http://mirrors.ripple.com/ubuntu/ trusty stable contrib'
+    - name: Install apt repo key
+      apt_key: url=http://mirrors.ripple.com/mirrors.ripple.com.gpg.key
+    - name: Install rippled
+      apt: update_cache=true name=rippled
+    - name: Make rippled data directories
+      file: state=directory owner=rippled group=rippled path=/srv/rippled/db/
+    - name: Configure rippled
+      template: src=rippled.cfg dest=/etc/rippled/rippled.cfg
+    - name: Start rippled
+      service: name=rippled state=started
+    - name: Wait for rippled to become available
+      wait_for: port=51234
+      when: "not validation_seed"
+    - name: Generate a validator key
+      shell: rippled --conf /etc/rippled/rippled.cfg -q validation_create > /tmp/validation_key
+      when: "not validation_seed"
+    - name: Install jq
+      apt: name=jq
+      when: "not validation_seed"
+    - name: Extract public key
+      command: jq -r .result.validation_public_key /tmp/validation_key
+      register: validation_public_key_capture
+      when: "not validation_public_key"
+    - name: Extract public key
+      command: jq -r .result.validation_seed /tmp/validation_key
+      register: validation_seed_capture
+      when: "not validation_seed"
+    - name: Set validation seed vars
+      set_fact: validation_seed={{validation_seed_capture.stdout}}
+      when: "not validation_seed"
+      notify:
+        - Reinstall rippled.cfg with validator key
+    - name: Set validation key var
+      set_fact: validation_public_key={{validation_public_key_capture.stdout}}
+      when: "not validation_public_key"
+      notify:
+        - Reinstall rippled.cfg with validator key
+  handlers:
+    - name: Reinstall rippled.cfg with validator key
+      template: src=rippled.cfg dest=/etc/rippled/rippled.cfg
+      notify: Restart rippled
+    - name: Restart rippled
+      service: name=rippled state=restarted
