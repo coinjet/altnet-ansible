@@ -8,5 +8,5 @@
     confirm: "Are you sure you want to kill the testnet!?! [y/N]"
   tasks:
     - name: Kill rippled
-      command: killall -9 rippled
+      command: pkill -9 rippled
       when: "confirm == 'y'"
