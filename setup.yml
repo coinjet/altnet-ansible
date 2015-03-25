@@ -3,6 +3,8 @@
   hosts: all
   user: ubuntu
   sudo: true
+  serial: 1
+  gather_facts: false
   vars:
     validation_seed: false
     validation_public_key: false
