@@ -1,0 +1,28 @@
+---
+- name: Install and configure sumologic
+  hosts: all
+  user: ubuntu
+  sudo: true
+  gather_facts: false
+  vars_files:
+    - vars/sumo-config.yml
+  tasks:
+    - name: Install java
+      apt: update_cache=yes name=openjdk-7-jre state=latest
+    - name: Download sumologic deb
+      get_url: dest=/tmp/sumocollector.deb url=https://collectors.sumologic.com/rest/download/deb/64
+    - name: Install sumologic deb
+      apt: deb=/tmp/sumocollector.deb state=present
+    - name: Configure sumologic
+      template: src=templates/sumo.conf dest=/etc/sumo.conf
+      notify:
+        - Restart sumo collector
+    - name: Configure sumo sources
+      template: src=templates/sumoSources.json dest=/etc/sumoSources.json
+      notify:
+        - Restart sumo collector
+    - name: Start sumo collector
+      service: name=collector state=started
+  handlers:
+    - name: Restart sumo collector
+      service: name=collector state=restarted

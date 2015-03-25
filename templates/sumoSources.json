@@ -1,0 +1,24 @@
+{
+"api.version":"v1",
+"sources": [
+  {
+    "name": "rippled",
+    "category": "altnet/rippled",
+    "sourceType": "LocalFile",
+    "pathExpression": "/mnt/rippled/log/debug.log"
+  },
+  {
+    "name": "rippled server_info",
+    "category": "altnet/rippled/server_info",
+    "commands": ["/usr/sbin/rippled", "--conf", "/etc/rippled/rippled.cfg", "-q", "server_info"],
+    "cronExpression": "0 * * * * * *",
+    "sourceType": "Script"
+  },
+  {
+    "name": "sumocollector",
+    "category": "altnet/sumo",
+    "sourceType": "LocalFile",
+    "pathExpression": "/opt/SumoCollector/logs/collector.log"
+  }
+]
+}
