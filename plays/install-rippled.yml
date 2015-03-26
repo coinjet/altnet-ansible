@@ -1,6 +1,7 @@
 ---
 - name: Install and configure a rippled validator
   hosts: all
+  serial: "10%"
   user: ubuntu
   sudo: true
   gather_facts: false
@@ -17,4 +18,5 @@
       file: state=directory owner=rippled group=rippled path=/mnt/rippled/db/
     - name: Make rippled log directory
       file: state=directory owner=rippled group=rippled path=/mnt/rippled/log/
+
     - include: tasks/reconfigure-rippled.yml
