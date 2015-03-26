@@ -6,9 +6,6 @@
   gather_facts: false
   vars_prompt:
     ledger_seq: "Last ledger number to start rippled from"
-  vars_files:
-    - "validation-keys/{{validator_uuid}}"
-    - vars/validators.yml
   tasks:
     - name: Stop rippled on all hosts
       service: name=rippled state=stopped

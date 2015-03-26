@@ -4,9 +4,6 @@
   sudo: true
   serial: "10%"
   gather_facts: false
-  vars_files:
-    - "../validation-keys/{{validator_uuid}}"
-    - ../vars/validators.yml
   tasks:
     - name: Install apt repo
       apt_repository: repo='deb http://mirrors.ripple.com/ubuntu/ trusty stable contrib'
