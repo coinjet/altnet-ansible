@@ -5,7 +5,7 @@
   sudo: true
   gather_facts: false
   vars_files:
-    - vars/sumo-config.yml
+    - ../vars/sumo-config.yml
   tasks:
     - name: Install java
       apt: update_cache=yes name=openjdk-7-jre state=latest
@@ -14,11 +14,11 @@
     - name: Install sumologic deb
       apt: deb=/tmp/sumocollector.deb state=present
     - name: Configure sumologic
-      template: src=templates/sumo.conf dest=/etc/sumo.conf
+      template: src=../templates/sumo.conf dest=/etc/sumo.conf
       notify:
         - Restart sumo collector
     - name: Configure sumo sources
-      template: src=templates/sumoSources.json dest=/etc/sumoSources.json
+      template: src=../templates/sumoSources.json dest=/etc/sumoSources.json
       notify:
         - Restart sumo collector
     - name: Start sumo collector
