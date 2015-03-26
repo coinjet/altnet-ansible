@@ -35,10 +35,19 @@ Installing SumoLogic log collection
 
     $ ansible-playbook -i validators.yml plays/sumologic.yml
 
+Ask around for the encryption password. Someone knows it.
+
 Run an RPC command
 ------------------
 
     $ ansible-playbook -i validators.yml plays/do-rpc.yml
+
+The playbook will prompt you for the command you want to run. Try
+``server_info`` for starters.
+
+There is also another variable that can filter the JSON output through jq.
+Specify ``-e jq_filter=.last_close.proposers`` for example, to pull the number
+of proposers of the last closed ledger.
 
 Recover after a validator crash (EXPERIMENTAL)
 ----------------------------------------------

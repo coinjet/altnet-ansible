@@ -5,9 +5,11 @@
   gather_facts: false
   vars_prompt:
     rpc_command: "RPC command"
+  vars:
+    jq_filter: ""
   tasks:
     - name: Execute {{rpc_command}}
-      shell: rippled --conf /etc/rippled/rippled.cfg -q '{{rpc_command}}' | jq .result.info
+      shell: rippled --conf /etc/rippled/rippled.cfg -q '{{rpc_command}}' | jq .result.info{{jq_filter}}
       register: result
     - name: Print result
       debug: var=result.stdout
