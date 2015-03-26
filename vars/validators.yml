@@ -48,4 +48,7 @@ validators:
     key: n9Kk6U5nSF8EggfmTpMdna96UuXWAVwSsDSXRkXeZ5vLcAFk77tr
     ip: 54.94.245.104
     port: 51235
-
+  - uuid: ad57eaea-2711-4b04-9ee8-65c4022c3889
+    key: n9LeE7e1c35m96BfFbUu1HKyJfqwiPvwNk6YxT5ewuZYsvwZqprp
+    ip: 41.79.78.42
+    port: 51235

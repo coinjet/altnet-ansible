@@ -27,3 +27,6 @@
 [sa-east-1]
 54.207.20.165 validator_uuid=6f1500b9-f138-4985-be13-a875ff597db6 ansible_ssh_private_key_file=skynet-keys/sa-east-1.pem
 54.94.245.104 validator_uuid=3f94c917-c5a8-410b-93a8-9636b75a1fc8 ansible_ssh_private_key_file=skynet-keys/sa-east-1.pem
+
+[cloudafrica]
+41.79.78.42 validator_uuid=4d57eaea-2711-4b04-9ee8-65c4022c3889 ansible_ssh_private_key_file=skynet-keys/cloudafrica.pem
