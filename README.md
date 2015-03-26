@@ -22,7 +22,7 @@ Adding a new validator
 
 Add your new validator to hosts.txt with the appropriate region, IP, key, and UUID.
 Do the same for vars/validators.yml, and update the validation_quorum in there
-appropriately. Then:
+appropriately. Finally, add the private keys to validation-keys/{{uuid}} Then:
 
     $ ansible-playbook -i hosts.txt plays/restart-network.yml
 
