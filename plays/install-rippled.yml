@@ -6,7 +6,8 @@
   sudo: true
   gather_facts: false
   vars_files:
-    - vars/validators.yml
+    - "../validation-keys/{{validator_uuid}}"
+    - ../vars/validators.yml
   tasks:
     - name: Install apt repo
       apt_repository: repo='deb http://mirrors.ripple.com/ubuntu/ trusty stable contrib'
@@ -19,4 +20,4 @@
     - name: Make rippled log directory
       file: state=directory owner=rippled group=rippled path=/mnt/rippled/log/
 
-    - include: tasks/reconfigure-rippled.yml
+    - include: ../tasks/reconfigure-rippled.yml
