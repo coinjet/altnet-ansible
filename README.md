@@ -1,6 +1,10 @@
 Ripple Altnet Ansible Magics
 ============================
 
+First thing you'll want to do is pull the private credentials repositories:
+
+    $ git submodule update --init
+
 These playbooks help us manage the Ripple Altnet. There are a couple common
 tasks that one might want to perform:
 
