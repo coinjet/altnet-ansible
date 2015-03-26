@@ -1,0 +1,14 @@
+- name: Restart rippled on all validators
+  hosts: all
+  user: ubuntu
+  sudo: true
+  serial: "10%"
+  gather_facts: false
+  vars_files:
+    - "../validation-keys/{{validator_uuid}}"
+    - ../vars/validators.yml
+  tasks:
+    - include: ../tasks/reconfigure-rippled.yml
+
+    - name: Sleep for 30 seconds
+      command: sleep 30

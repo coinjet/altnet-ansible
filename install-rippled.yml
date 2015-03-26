@@ -1,0 +1,20 @@
+---
+- name: Install and configure a rippled validator
+  hosts: all
+  user: ubuntu
+  sudo: true
+  gather_facts: false
+  vars_files:
+    - vars/validators.yml
+  tasks:
+    - name: Install apt repo
+      apt_repository: repo='deb http://mirrors.ripple.com/ubuntu/ trusty stable contrib'
+    - name: Install apt repo key
+      apt_key: url=http://mirrors.ripple.com/mirrors.ripple.com.gpg.key
+    - name: Install rippled
+      apt: update_cache=true name=rippled
+    - name: Make rippled data directories
+      file: state=directory owner=rippled group=rippled path=/mnt/rippled/db/
+    - name: Make rippled log directory
+      file: state=directory owner=rippled group=rippled path=/mnt/rippled/log/
+    - include: tasks/reconfigure-rippled.yml

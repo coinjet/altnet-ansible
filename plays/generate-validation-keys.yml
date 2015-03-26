@@ -1,0 +1,14 @@
+---
+- name: Generate a validation keypair
+  hosts: all
+  user: ubuntu
+  gather_facts: false
+  tasks:
+    - name: Start rippled
+      service: name=rippled state=started
+    - name: Wait for rippled to become available
+      wait_for: port=51234
+    - name: Generate a validator key
+      shell: rippled --conf /etc/rippled/rippled.cfg -q validation_create
+      register: key_output
+    - debug: var=key_output.stdout

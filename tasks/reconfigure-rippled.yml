@@ -1,0 +1,9 @@
+- name: Configure rippled
+  template: src=../rippled.cfg dest=/etc/rippled/rippled.cfg
+- name: Stop rippled
+  service: name=rippled state=stopped
+  ignore_errors: true
+- name: Start rippled
+  service: name=rippled state=started
+- name: Wait for rippled to become available
+  wait_for: port=51234
