@@ -1,0 +1,13 @@
+---
+- name: Run RPC command on all validators
+  hosts: all
+  user: ubuntu
+  gather_facts: false
+  vars_prompt:
+    rpc_command: "RPC command"
+  tasks:
+    - name: Execute {{rpc_command}}
+      shell: rippled --conf /etc/rippled/rippled.cfg -q '{{rpc_command}}' | jq .result.info
+      register: result
+    - name: Print result
+      debug: var=result.stdout
