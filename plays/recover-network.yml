@@ -1,0 +1,42 @@
+---
+- name: Start recovery of rippled
+  hosts: all
+  sudo: true
+  user: ubuntu
+  gather_facts: false
+  vars_prompt:
+    ledger_seq: "Last ledger number to start rippled from"
+  vars_files:
+    - "validation-keys/{{validator_uuid}}"
+    - vars/validators.yml
+  tasks:
+    - name: Stop rippled on all hosts
+      service: name=rippled state=stopped
+      ignore_errors: true
+
+    - name: Start first rippled validator with ledger {{ledger_seq}} and quorum of zero
+      command: rippled --quorum 0 --conf=/etc/rippled/rippled.cfg --ledger {{ledger_seq}}
+      when: validator_uuid == validators[0].uuid
+    - name: Wait for rippled to become available
+      wait_for: port=51234
+      when: validator_uuid == validators[0].uuid
+
+    - name: Start rippled on second validator with quorum of one
+      command: rippled --quorum 1 --conf=/etc/rippled/rippled.cfg
+      when: validator_uuid == validators[1].uuid
+    - name: Wait for rippled to become available
+      wait_for: port=51234
+      when: validator_uuid == validators[1].uuid
+
+    - name: Set quorum for network to two
+      set_facts: validation_quorum=2
+    - name: Configure rippled
+      template: src=../rippled.cfg dest=/etc/rippled/rippled.cfg
+    - name: Start rippled on remaining validators
+      service: name=rippled state=started
+      when: validator_uuid != validators[1].uuid and validator_uuid != validators[0].uuid
+    - name: Wait for rippled to become available
+      wait_for: port=51234
+      when: validator_uuid != validators[1].uuid and validator_uuid != validators[0].uuid
+
+- include: restart-network.yml
