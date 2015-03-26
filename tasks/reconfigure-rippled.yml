@@ -3,7 +3,9 @@
 - name: Stop rippled
   service: name=rippled state=stopped
   ignore_errors: true
+- name: Wait for rippled to become available
+  wait_for: state=drained port=51234
 - name: Start rippled
-  service: name=rippled state=started
+  command: service rippled start
 - name: Wait for rippled to become available
   wait_for: port=51234
