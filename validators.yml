@@ -1,112 +1,112 @@
 validation_quorum: 7
 validators:
-- ip: 54.65.200.22
-  key: n9LnZ1AiyHmytkhLUr89dmL76uxZLzzyregvQVZFkVfqEQTCpg7B
-  port: 51235
-  region: ap-northeast-1
-  uuid: ce750c64-3680-4847-a71c-7badf745fb5a
-- ip: 54.67.72.173
-  key: n9LJWexXc9wxzUKWZe4faTS4N9DUba3jNsByERZSa8MJc2bhCF7c
-  port: 51235
-  region: us-west-1
-  uuid: 360ee3cf-b9f6-425a-b8c1-de8630249fae
-- ip: 52.16.66.76
-  key: n9MnXUt5Qcx3BuBYKJfS4fqSohgkT79NGjXnZeD9joKvP3A5RNGm
-  port: 51235
-  region: eu-west-1
-  uuid: 0509e031-1e36-49f8-a0ad-72ec08fed69a
-- ip: 54.93.66.235
-  key: n9LxyXSSrTZ482ceep9WGQnT2nknfzFMFgNL4wMjTUn3SfF3rhtS
-  port: 51235
-  region: eu-central-1
-  uuid: c627464b-e286-4f01-bb06-0a7278e8512a
-- ip: 52.74.67.18
-  key: n9MTPLhEEjxcWHfqsXQhFoSUKaqYvU4E7B4yke39EMFm2DhFr43F
-  port: 51235
-  region: ap-southeast-1
-  uuid: 6e9e5eef-2734-4f95-ac4b-cf62fe66f405
-- ip: 52.64.9.71
-  key: n9Lw3j7THPhKLz2uDqBBWwyxHQC1Foyr3M6JeWCVyu7uhnhL6HA5
-  port: 51235
-  region: ap-southeast-2
-  uuid: 82dbcc80-33bc-4967-81ee-6068fcb361c1
-- ip: 54.207.20.165
-  key: n9L2XLFvcdriK34bCNXexzKMVcsZ9i4UG9J4pykR5c3J8gvBB6fw
-  port: 51235
-  region: sa-east-1
-  uuid: 6f1500b9-f138-4985-be13-a875ff597db6
-- ip: 54.172.212.33
-  key: n9JCK3M4ci7b1XRq2wr1Ckd1HNq3Cg7NWrWiKyzJa4R5J489QGer
-  port: 51235
-  region: us-east-1
-  uuid: 33505bcc-9729-44d4-ba2b-4ce2cb039241
-- ip: 52.11.28.194
-  key: n9LXZBs2aBiNsgBkhVJJjDX4xA4DoEBLycF6q8zRhXD1Zu3Kwbe4
-  port: 51235
-  region: us-west-2
-  uuid: de0659dc-36d3-4c5b-a5ee-404186d42370
-- ip: 54.92.66.122
-  key: n9J1voqeu6iZQiLXaMofLeMbv8mbPskJWGYRtjdo8rmpvNdQRyEn
-  port: 51235
-  region: ap-northeast-1
-  uuid: f1802428-476d-44e8-ad24-92d715c66b08
-- ip: 54.94.245.104
-  key: n9Kk6U5nSF8EggfmTpMdna96UuXWAVwSsDSXRkXeZ5vLcAFk77tr
-  port: 51235
-  region: sa-east-1
-  uuid: 3f94c917-c5a8-410b-93a8-9636b75a1fc8
-- ip: 41.79.78.42
-  key: n9LeE7e1c35m96BfFbUu1HKyJfqwiPvwNk6YxT5ewuZYsvwZqprp
-  port: 51235
-  region: cloudafrica
-  uuid: 4d57eaea-2711-4b04-9ee8-65c4022c3889
-- ip: 52.5.35.81
-  key: n9MUVxFSATeS7R8BU36iqURG6Qgau3jph7P93R22KzQmA2sosZrM
-  port: 51235
-  region: us-east-1
-  uuid: ceeeafc0-4082-4571-98a5-4b64d52905ff
-- ip: 52.4.212.15
-  key: n9MBXTz7PGD3oTatLVHBC1fjudjgEyqeXvh7Vm4iucRtp6sCt7gb
-  port: 51235
-  region: us-east-1
-  uuid: eb501de7-eeac-4f8b-ac74-afdafb103d56
-- ip: 52.11.181.30
-  key: n9KcuH7Y4q4SD3KoS5uXLhcDVvexpnYkwciCbcX131ehM5ek2BB6
-  port: 51235
-  region: us-west-2
-  uuid: 8ee17df7-a602-472c-97aa-4c0e3c5c99ee
-- ip: 54.153.62.170
-  key: n94ae7nc9aNdJ2gHWK25hvRqRSTuwq8ZmUQRgijWXA6yBKu64yGv
-  port: 51235
-  region: us-west-1
-  uuid: 97618e5b-415d-4db5-b4bb-761cb623e60f
-- ip: 52.16.195.137
-  key: n9M6PqJWPEm7qv63bDd9yCtzx1tZehksPHUHMuDpxab2sEmDRgYe
-  port: 51235
-  region: eu-west-1
-  uuid: 68245fd6-1400-41f8-8db0-ca3c415c24fc
-- ip: 52.28.6.140
-  key: n94GVbHF4w4FMeuiJcwT2TLsvVtBhaoXmEgPs4CeCKaENrRrq76M
-  port: 51235
-  region: eu-central-1
-  uuid: 31532433-3a5d-45f7-97d5-34cf5a6caa4c
-- ip: 52.74.89.102
-  key: n9MNukfbVSygg5SzFqwHZNunq7iC54cAJi8vTpW5Ufv3rTx1MVF7
-  port: 51235
-  region: ap-southeast-1
-  uuid: 7443cccb-2419-4310-862f-43ff0aa71f88
-- ip: 52.68.19.29
-  key: n9LYyd8eUVd54NQQWPAJRFPM1bghJjaf1rkdji2haF4zVjeAPjT2
-  port: 51235
-  region: ap-northeast-1
-  uuid: a001dbfd-6c10-4012-9e5e-4b146c8cdf04
-- ip: 52.64.71.13
-  key: n9LPHzim1yRUp4hkVgyruK2NoaHTGF3MZYzpKG21nb3E5SYx4S8C
-  port: 51235
-  region: ap-southeast-2
-  uuid: 5307f686-7c78-4d69-a98e-4c11147a1001
-- ip: 54.94.248.137
-  key: n9J2vk7A2L1BTi7XhCA2eAQKNX83gossNCwyfWedECrBbAu9HrZc
-  port: 51235
-  region: sa-east-1
-  uuid: 4f1c1b36-72cf-40db-a9fb-d8006c8a5735
+  - ip: 54.65.200.22
+    key: n9LnZ1AiyHmytkhLUr89dmL76uxZLzzyregvQVZFkVfqEQTCpg7B
+    port: 51235
+    region: ap-northeast-1
+    uuid: ce750c64-3680-4847-a71c-7badf745fb5a
+  - ip: 54.67.72.173
+    key: n9LJWexXc9wxzUKWZe4faTS4N9DUba3jNsByERZSa8MJc2bhCF7c
+    port: 51235
+    region: us-west-1
+    uuid: 360ee3cf-b9f6-425a-b8c1-de8630249fae
+  - ip: 52.16.66.76
+    key: n9MnXUt5Qcx3BuBYKJfS4fqSohgkT79NGjXnZeD9joKvP3A5RNGm
+    port: 51235
+    region: eu-west-1
+    uuid: 0509e031-1e36-49f8-a0ad-72ec08fed69a
+  - ip: 54.93.66.235
+    key: n9LxyXSSrTZ482ceep9WGQnT2nknfzFMFgNL4wMjTUn3SfF3rhtS
+    port: 51235
+    region: eu-central-1
+    uuid: c627464b-e286-4f01-bb06-0a7278e8512a
+  - ip: 52.74.67.18
+    key: n9MTPLhEEjxcWHfqsXQhFoSUKaqYvU4E7B4yke39EMFm2DhFr43F
+    port: 51235
+    region: ap-southeast-1
+    uuid: 6e9e5eef-2734-4f95-ac4b-cf62fe66f405
+  - ip: 52.64.9.71
+    key: n9Lw3j7THPhKLz2uDqBBWwyxHQC1Foyr3M6JeWCVyu7uhnhL6HA5
+    port: 51235
+    region: ap-southeast-2
+    uuid: 82dbcc80-33bc-4967-81ee-6068fcb361c1
+  - ip: 54.207.20.165
+    key: n9L2XLFvcdriK34bCNXexzKMVcsZ9i4UG9J4pykR5c3J8gvBB6fw
+    port: 51235
+    region: sa-east-1
+    uuid: 6f1500b9-f138-4985-be13-a875ff597db6
+  - ip: 54.172.212.33
+    key: n9JCK3M4ci7b1XRq2wr1Ckd1HNq3Cg7NWrWiKyzJa4R5J489QGer
+    port: 51235
+    region: us-east-1
+    uuid: 33505bcc-9729-44d4-ba2b-4ce2cb039241
+  - ip: 52.11.28.194
+    key: n9LXZBs2aBiNsgBkhVJJjDX4xA4DoEBLycF6q8zRhXD1Zu3Kwbe4
+    port: 51235
+    region: us-west-2
+    uuid: de0659dc-36d3-4c5b-a5ee-404186d42370
+  - ip: 54.92.66.122
+    key: n9J1voqeu6iZQiLXaMofLeMbv8mbPskJWGYRtjdo8rmpvNdQRyEn
+    port: 51235
+    region: ap-northeast-1
+    uuid: f1802428-476d-44e8-ad24-92d715c66b08
+  - ip: 54.94.245.104
+    key: n9Kk6U5nSF8EggfmTpMdna96UuXWAVwSsDSXRkXeZ5vLcAFk77tr
+    port: 51235
+    region: sa-east-1
+    uuid: 3f94c917-c5a8-410b-93a8-9636b75a1fc8
+  - ip: 41.79.78.42
+    key: n9LeE7e1c35m96BfFbUu1HKyJfqwiPvwNk6YxT5ewuZYsvwZqprp
+    port: 51235
+    region: cloudafrica
+    uuid: 4d57eaea-2711-4b04-9ee8-65c4022c3889
+  - ip: 52.5.35.81
+    key: n9MUVxFSATeS7R8BU36iqURG6Qgau3jph7P93R22KzQmA2sosZrM
+    port: 51235
+    region: us-east-1
+    uuid: ceeeafc0-4082-4571-98a5-4b64d52905ff
+  - ip: 52.4.212.15
+    key: n9MBXTz7PGD3oTatLVHBC1fjudjgEyqeXvh7Vm4iucRtp6sCt7gb
+    port: 51235
+    region: us-east-1
+    uuid: eb501de7-eeac-4f8b-ac74-afdafb103d56
+  - ip: 52.11.181.30
+    key: n9KcuH7Y4q4SD3KoS5uXLhcDVvexpnYkwciCbcX131ehM5ek2BB6
+    port: 51235
+    region: us-west-2
+    uuid: 8ee17df7-a602-472c-97aa-4c0e3c5c99ee
+  - ip: 54.153.62.170
+    key: n94ae7nc9aNdJ2gHWK25hvRqRSTuwq8ZmUQRgijWXA6yBKu64yGv
+    port: 51235
+    region: us-west-1
+    uuid: 97618e5b-415d-4db5-b4bb-761cb623e60f
+  - ip: 52.16.195.137
+    key: n9M6PqJWPEm7qv63bDd9yCtzx1tZehksPHUHMuDpxab2sEmDRgYe
+    port: 51235
+    region: eu-west-1
+    uuid: 68245fd6-1400-41f8-8db0-ca3c415c24fc
+  - ip: 52.28.6.140
+    key: n94GVbHF4w4FMeuiJcwT2TLsvVtBhaoXmEgPs4CeCKaENrRrq76M
+    port: 51235
+    region: eu-central-1
+    uuid: 31532433-3a5d-45f7-97d5-34cf5a6caa4c
+  - ip: 52.74.89.102
+    key: n9MNukfbVSygg5SzFqwHZNunq7iC54cAJi8vTpW5Ufv3rTx1MVF7
+    port: 51235
+    region: ap-southeast-1
+    uuid: 7443cccb-2419-4310-862f-43ff0aa71f88
+  - ip: 52.68.19.29
+    key: n9LYyd8eUVd54NQQWPAJRFPM1bghJjaf1rkdji2haF4zVjeAPjT2
+    port: 51235
+    region: ap-northeast-1
+    uuid: a001dbfd-6c10-4012-9e5e-4b146c8cdf04
+  - ip: 52.64.71.13
+    key: n9LPHzim1yRUp4hkVgyruK2NoaHTGF3MZYzpKG21nb3E5SYx4S8C
+    port: 51235
+    region: ap-southeast-2
+    uuid: 5307f686-7c78-4d69-a98e-4c11147a1001
+  - ip: 54.94.248.137
+    key: n9J2vk7A2L1BTi7XhCA2eAQKNX83gossNCwyfWedECrBbAu9HrZc
+    port: 51235
+    region: sa-east-1
+    uuid: 4f1c1b36-72cf-40db-a9fb-d8006c8a5735
