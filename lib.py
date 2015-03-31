@@ -21,6 +21,42 @@ regions = {
       'subnet': 'subnet-c7d2cc81',
       'key': 'codius-host-california',
       'groups': ['sg-85e44be0']
+    },
+    'eu-west-1': {
+      'ami': 'ami-f37fec84',
+      'subnet': 'subnet-235eca46',
+      'key': 'codius-host-ireland',
+      'groups': ['sg-db2a56be']
+    },
+    'eu-central-1': {
+      'ami': 'ami-9c380b81',
+      'subnet': 'subnet-c222e2ab',
+      'key': 'codius-host-frankfurt',
+      'groups': ['sg-f28c439b']
+    },
+    'ap-southeast-1': {
+      'ami': 'ami-ea2610b8',
+      'subnet': 'subnet-d1db04b4',
+      'key': 'codius-host-singapore',
+      'groups': ['sg-11b51974']
+    },
+    'ap-northeast-1': {
+      'ami': 'ami-155ab315',
+      'subnet': 'subnet-169c4f61',
+      'key': 'codius-host-tokyo',
+      'groups': ['sg-d70ab5b2']
+    },
+    'ap-southeast-2': {
+      'ami': 'ami-9393e2a9',
+      'subnet': 'subnet-f5805d90',
+      'key': 'codius-host-sydney',
+      'groups': ['sg-9f66d7fa']
+    },
+    'sa-east-1': {
+      'ami': 'ami-73f5496e',
+      'subnet': 'subnet-ebe14c8e',
+      'key': 'codius-host-sao-paulo',
+      'groups': ['sg-856ecae0']
     }
 }
 
