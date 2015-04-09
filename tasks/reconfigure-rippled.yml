@@ -1,5 +1,13 @@
 - name: Configure rippled
   template: src=../rippled.cfg dest=/etc/rippled/rippled.cfg
+- name: Add ssl cert
+  copy: src=../skynet-keys/server.crt dest=/etc/ssl/certs/server.crt owner=rippled group=rippled mode="u=rw,g=r,o=r"
+- name: Add ssl key
+  copy: src=../skynet-keys/server.key dest=/etc/ssl/private/server.key owner=rippled group=rippled mode="u=rw,g=r,o=r"
+- name: Create ssl-cert group
+  apt: update_cache=true name=ssl-cert
+- name: Add rippled user to ssl-cert group
+  user: name=rippled groups=ssl-cert append=yes
 - name: Stop rippled
   service: name=rippled state=stopped
   ignore_errors: true
