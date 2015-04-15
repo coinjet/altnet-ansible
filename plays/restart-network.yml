@@ -10,7 +10,7 @@
     - name: Install apt repo key
       apt_key: url=http://mirrors.ripple.com/mirrors.ripple.com.gpg.key
     - name: Install rippled
-      apt: update_cache=true name=rippled
+      apt: update_cache=true state=latest name=rippled
     - name: Make rippled data directories
       file: state=directory owner=rippled group=rippled path=/mnt/rippled/db/
     - name: Make rippled log directory
