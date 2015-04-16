@@ -30,3 +30,8 @@ validators:
     port: 51235
     region: ap-northeast-1
     uuid: a001dbfd-6c10-4012-9e5e-4b146c8cdf04
+  - ip: 52.64.87.184
+    key: n9M2xBBP2xL1aZnvAF8cL4M1Y7r19hVnnm7PMM9yf3oQtzN2Nerx
+    port: 51235
+    region: ap-southeast-2
+    uuid: a8fcbe3f-8078-4798-b17e-b55f05d4bbb0
