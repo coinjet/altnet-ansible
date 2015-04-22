@@ -4,18 +4,21 @@
   sudo: true
   serial: "10%"
   gather_facts: false
-  tasks:
-    - name: Install apt repo
-      apt_repository: repo='deb http://mirrors.ripple.com/ubuntu/ trusty stable contrib'
-    - name: Install apt repo key
-      apt_key: url=http://mirrors.ripple.com/mirrors.ripple.com.gpg.key
-    - name: Install rippled
-      apt: update_cache=true name=rippled
+  roles:
+    - name: rippled
+      rippled_ssl_cert: ../skynet-keys/server.crt
+      rippled_ssl_key: ../skynet-keys/server.key
+      rippled_data_root: /mnt/rippled/db/
+      rippled_log_file: /mnt/rippled/log/rippled.log
+      rippled_config_template: ../rippled.cfg
+      rippled_run_service: false
+  pre_tasks:
     - name: Make rippled data directories
       file: state=directory owner=rippled group=rippled path=/mnt/rippled/db/
     - name: Make rippled log directory
       file: state=directory owner=rippled group=rippled path=/mnt/rippled/log/
 
+  tasks:
     - include: ../tasks/reconfigure-rippled.yml
 
     - name: Sleep for 30 seconds

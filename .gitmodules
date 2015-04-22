@@ -4,3 +4,6 @@
 [submodule "validation-keys"]
 	path = validation-keys
 	url = git@github.com:codius/validator-keys
+[submodule "roles/rippled"]
+	path = roles/rippled
+	url = git@github.com:ripple/rippled-ansible-role
